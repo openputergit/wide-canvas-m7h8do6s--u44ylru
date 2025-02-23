@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holi Festival Celebration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --holi-pink: #FF69B4;
+            --holi-yellow: #FFD700;
+            --holi-blue: #00BFFF;
+            --holi-green: #32CD32;
+            --shiny-black: #0A0A0A;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--shiny-black);
+            background-image: linear-gradient(45deg, #0a0a0a 25%, #111111 25%, #111111 50%, #0a0a0a 50%, #0a0a0a 75%, #111111 75%, #111111 100%);
+            background-size: 20px 20px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, var(--holi-pink), var(--holi-yellow), var(--holi-blue), var(--holi-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient 5s ease infinite;
+        }
+
+        .color-splash {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(50px);
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Decorative color splashes -->
+    <div class="color-splash bg-pink-500" style="width: 300px; height: 300px; top: 10%; left: 5%;"></div>
+    <div class="color-splash bg-yellow-400" style="width: 250px; height: 250px; top: 30%; right: 10%;"></div>
+    <div class="color-splash bg-blue-400" style="width: 200px; height: 200px; bottom: 20%; left: 15%;"></div>
+
+    <!-- Navigation -->
+    <nav class="relative z-10 bg-black/50 backdrop-blur-lg border-b border-white/10">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/widecanvas-d0dd4.appspot.com/o/logos%2Fcolor.png?alt=media&token=8fc581ee-fe15-40c2-bcb8-315e865dbdcd" 
+                         alt="Logo" class="h-12 w-auto">
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="text-white hover:text-pink-400 transition-colors">Home</a>
+                    <a href="#" class="text-white hover:text-yellow-400 transition-colors">About</a>
+                    <a href="#" class="text-white hover:text-blue-400 transition-colors">Gallery</a>
+                    <a href="#" class="text-white hover:text-green-400 transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-white">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative z-10 py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="w-full md:w-1/2">
+                    <h1 class="gradient-text text-4xl md:text-6xl font-bold mb-6">
+                        Celebrate the Festival of Colors
+                    </h1>
+                    <p class="text-gray-300 text-lg mb-8">
+                        Join us in celebrating Holi, the vibrant festival that brings joy, 
+                        colors, and happiness to everyone's life.
+                    </p>
+                    <button class="bg-gradient-to-r from-pink-500 via-yellow-500 to-blue-500 
+                                 text-white font-semibold px-8 py-3 rounded-full 
+                                 hover:shadow-lg hover:shadow-pink-500/30 transition-all">
+                        Join the Celebration
+                    </button>
+                </div>
+                <div class="w-full md:w-1/2 floating">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/widecanvas-d0dd4.appspot.com/o/additional-images%2Fcolor.png?alt=media&token=c9bae934-713a-4cd8-8324-935f694411bb" 
+                         alt="Holi Celebration" 
+                         class="w-full h-auto rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="relative z-10 py-20 bg-black/30">
+        <div class="container mx-auto px-4">
+            <h2 class="gradient-text text-3xl md:text-4xl font-bold text-center mb-16">
+                Experience the Magic of Holi
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-hover bg-black/50 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+                    <div class="text-pink-500 text-3xl mb-4">
+                        <i class="bi bi-palette-fill"></i>
+                    </div>
+                    <h3 class="text-white text-xl font-semibold mb-3">Organic Colors</h3>
+                    <p class="text-gray-400">
+                        Experience the joy of playing with 100% natural and skin-friendly colors.
+                    </p>
+                </div>
+                <div class="card-hover bg-black/50 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+                    <div class="text-yellow-400 text-3xl mb-4">
+                        <i class="bi bi-music-note-beamed"></i>
+                    </div>
+                    <h3 class="text-white text-xl font-semibold mb-3">Live Music</h3>
+                    <p class="text-gray-400">
+                        Dance to the beats of traditional and modern Holi songs.
+                    </p>
+                </div>
+                <div class="card-hover bg-black/50 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+                    <div class="text-blue-400 text-3xl mb-4">
+                        <i class="bi bi-cup-hot-fill"></i>
+                    </div>
+                    <h3 class="text-white text-xl font-semibold mb-3">Special Delicacies</h3>
+                    <p class="text-gray-400">
+                        Savor traditional Holi snacks and beverages.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 bg-black/50 backdrop-blur-lg border-t border-white/10 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Holi Celebration. All rights reserved.
+                </p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-pink-500 transition-colors">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
